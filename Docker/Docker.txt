@@ -1,0 +1,54 @@
+Docker is a powerful tool for containerization, providing a portable and isolated environment for applications. Containers are lightweight, efficient, and encapsulate all dependencies needed for an application to run consistently across different environments.
+
+## Docker Basics:
+
+- **Docker Daemon:** The Docker daemon is responsible for managing containers, images, and other Docker-related tasks. It performs actions such as building, running, and pulling images.
+
+- **Docker Desktop:** Docker Desktop provides a graphical user interface for visualizing and managing Docker containers. It allows users to monitor the state of their Docker environment.
+
+## Docker Containers:
+
+Containers are isolated environments that encapsulate an application and its dependencies. They ensure consistency across various environments by avoiding conflicts with the local machine's settings. Containers have their own operating system, tools, and dependencies.
+
+- **Images vs Containers:** Images act as a blueprint or OS for containers. Containers cannot function independently and rely on images to run. Containers are isolated from each other and cannot directly share data or communicate.
+
+- **Custom Images:** Users can create custom images containing specific configurations, tools, and dependencies. These images can be shared on platforms like Docker Hub for others to use.
+
+## Docker Commands:
+
+- `docker run -it <image_name>`: Runs a container based on the specified image interactively.
+- `docker start <container_name>`: Starts a stopped container.
+- `docker stop <container_name>`: Stops a running container.
+- `docker container ls`: Lists running containers.
+- `docker container ls -a`: Lists all containers, including stopped ones.
+- `docker exec -it <container_name> <command>`: Executes a command within a running container.
+- `docker images`: Lists images on the local machine.
+
+## Container Management:
+
+- **Port Mapping:** Exposes container ports to the local machine using the `-p` option.
+  - Example: `docker run -it -p 1025:1025 <container_name>`
+
+- **Environment Variables:** Passes additional data to containers using the `-e` option.
+  - Example: `docker run -it -p 9000:9000 -e key=value <container_name>`
+
+## Docker Image Building:
+
+- `docker build -t <image_name> .`: Builds a Docker image based on the Dockerfile in the current directory.
+
+## Advanced Docker:
+
+- **Layered Caching:** Optimizes Dockerfile to utilize layered caching, keeping static layers at the top for efficient builds.
+
+## Docker Compose:
+
+- `docker-compose up`: Runs containers defined in the `docker-compose.yml` file.
+- `docker-compose up -d`: Runs containers in the background.
+- `docker-compose down`: Stops and removes containers defined in the `docker-compose.yml` file.
+
+Docker Compose simplifies multi-container application management by defining services, networks, and volumes in a YAML file. It streamlines the deployment process and ensures consistency across different environments.
+
+
+## Docker Networking:
+Bridge Mode:
+Host Mode:
