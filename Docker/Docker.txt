@@ -50,5 +50,13 @@ Docker Compose simplifies multi-container application management by defining ser
 
 
 ## Docker Networking:
-Bridge Mode:
-Host Mode:
+Bridge Mode (Default):can not access host computer such as while opening a container on local host 9000, we can't do that directly while being in bridge mode.
+Host Mode: can access the host computer such as can directly be redirected to local host 3000.
+No Network
+
+Customized Networks
+we can create our own networks in Docker.
+
+one network can contain multiple container of distict OS.
+
+containers within the one network can communicate with each other.
